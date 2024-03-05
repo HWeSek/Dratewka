@@ -1,0 +1,146 @@
+[
+  {
+    "id": ["1", "1"],
+    "directions": ["E"]
+  },
+  {
+    "id": ["1", "2"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["1", "3"],
+    "directions": ["W", "N", "E"]
+  },
+  {
+    "id": ["1", "4"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["1", "5"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["1", "6"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["1", "7"],
+    "directions": ["W", "N"]
+  },
+  {
+    "id": ["2", "1"],
+    "directions": ["N", "E"]
+  },
+  {
+    "id": ["2", "2"],
+    "directions": ["W", "N", "E"]
+  },
+  {
+    "id": ["2", "3"],
+    "directions": ["N", "W", "S", "E"]
+  },
+  {
+    "id": ["2", "4"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["2", "5"],
+    "directions": ["W", "N", "E"]
+  },
+  {
+    "id": ["2", "6"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["2", "7"],
+    "directions": ["N", "W"]
+  },
+  {
+    "id": ["3", "1"],
+    "directions": ["N", "E"]
+  },
+  {
+    "id": ["3", "2"],
+    "directions": ["N", "W"]
+  },
+  {
+    "id": ["3", "3"],
+    "directions": ["N", "S"]
+  },
+  {
+    "id": ["3", "4"],
+    "directions": ["E"]
+  },
+  {
+    "id": ["3", "5"],
+    "directions": ["N", "W", "S"]
+  },
+  {
+    "id": ["3", "6"],
+    "directions": ["S"]
+  },
+  {
+    "id": ["3", "7"],
+    "directions": ["S"]
+  },
+  {
+    "id": ["4", "1"],
+    "directions": ["E"]
+  },
+  {
+    "id": ["4", "2"],
+    "directions": ["W", "E"]
+  },
+  {
+    "id": ["4", "3"],
+    "directions": ["N", "W"]
+  },
+  {
+    "id": ["4", "4"],
+    "directions": ["E"]
+  },
+  {
+    "id": ["4", "5"],
+    "directions": ["N", "W", "S", "E"]
+  },
+  {
+    "id": ["4", "6"],
+    "directions": ["N", "W", "E"]
+  },
+  {
+    "id": ["4", "7"],
+    "directions": ["N", "W", "S"]
+  },
+  {
+    "id": ["5", "4"],
+    "directions": ["E"]
+  },
+  {
+    "id": ["5", "5"],
+    "directions": ["N", "W", "S"]
+  },
+  {
+    "id": ["5", "6"],
+    "directions": ["S"]
+  },
+  {
+    "id": ["5", "7"],
+    "directions": ["N"]
+  },
+  {
+    "id": ["6", "4"],
+    "directions": ["S"]
+  },
+  {
+    "id": ["6", "5"],
+    "directions": ["N", "W", "S"]
+  },
+  {
+    "id": ["6", "6"],
+    "directions": ["N", "W", "S"]
+  },
+  {
+    "id": ["6", "7"],
+    "directions": ["W"]
+  }
+]

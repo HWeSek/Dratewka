@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Atari;
+    src: url(static/fonts/PressStart2P.ttf);
+  }
+
+* {
+    font-family: Atari;
+    color: rgb(225, 225, 225);
+    box-sizing: border-box;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+body {
+    background-color: rgb(15, 15, 15);
+}
+
+#location-image {
+    background-color: rgb(102, 223, 102);
+    width: fit-content;
+    height: 250px;
+}
+
+#location-image img {
+    width: 400px;
+}
+
+#player-input{
+    background-color: rgb(15, 15, 15);
+    border: 0;
+    caret-color: white;
+}
+#player-input:focus{
+    background-color: rgb(15, 15, 15);
+    border: 0;
+    outline: none;
+}
+
+#location-text {
+    height: 160px;
+}
+
+
+ 
