@@ -16,7 +16,6 @@ body {
 }
 
 #location-image {
-    background-color: rgb(102, 223, 102);
     width: fit-content;
     height: 250px;
 }

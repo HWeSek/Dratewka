@@ -2,251 +2,217 @@
   {
     "label": "You are inside a brimstone mine",
     "src": "11.gif",
-    "color": {"r": 235, "g": 211, "b": 64},
-    "position": [[1,1]],
-    "directions": ["E"]
+    "color": "rgb(235, 211, 64)",
+    "position": [[1,1]]
   },
   {
     "label": "You are at the entrance to the mine",
     "src": "12.gif",
-    "color": {"r": 89, "g": 93, "b": 87},
-    "position": [[1,2]],
-    "directions": ["E","W"]
+    "color": "rgb(89, 93, 87)",
+    "position": [[1,2]]
   },
   {
     "label": "A hill",
     "src": "13.gif",
-    "color": {"r": 117, "g": 237, "b": 243},
-    "position": [[1,3]],
-    "directions": ["E","S","W"]
+    "color": "rgb(117, 237, 243)",
+    "position": [[1,3]]
   },
   {
     "label": "Some bushes",
     "src": "14.gif",
-    "color": {"r": 202, "g": 230, "b": 51},
-    "position": [[1,4]],
-    "directions": ["E","W"]
+    "color": "rgb(202, 230, 51)",
+    "position": [[1,4]]
   },
   {
     "label": "An old deserted hut",
     "src": "15.gif",
-    "color": {"r": 220, "g": 204, "b": 61},
-    "position": [[1,5]],
-    "directions": ["E","W"]
+    "color": "rgb(220, 204, 61)",
+    "position": [[1,5]]
   },
   {
     "label": "The edge of a forest",
     "src": "16.gif",
-    "color": {"r": 167, "g": 245, "b": 63},
-    "position": [[1,6]],
-    "directions": ["E","W"]
+    "color": "rgb(167, 245, 63)",
+    "position": [[1,6]]
   },
   {
     "label": "A dark forest",
     "src": "17.gif",
-    "color": {"r": 140, "g": 253, "b": 99},
-    "position": [[1,7]],
-    "directions": ["S","W"]
+    "color": "rgb(140, 253, 99)",
+    "position": [[1,7]]
   },
   {
     "label": "A man nearby making tar",
     "src": "21.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[2,1]],
-    "directions": ["E","S"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[2,1]]
   },
   {
     "label": "A timber yard",
     "src": "22.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[2,2]],
-    "directions": ["E","W","S"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[2,2]]
   },
   {
     "label": "You are by a roadside shrine",
     "src": "23.gif",
-    "color": {"r": 167, "g": 245, "b": 63},
-    "position": [[2,3]],
-    "directions": ["N","S","E","W"]
+    "color": "rgb(167, 245, 63)",
+    "position": [[2,3]]
   },
   {
     "label": "You are by a small chapel",
     "src": "24.gif",
-    "color": {"r": 212, "g": 229, "b": 36},
-    "position": [[2,4]],
-    "directions": ["E","W"]
+    "color": "rgb(212, 229, 36)",
+    "position": [[2,4]]
   },
   {
     "label": "You are on a road leading to a wood",
     "src": "25.gif",
-    "color": {"r": 167, "g": 245, "b": 63},
-    "position": [[2,5]],
-    "directions": ["E","W","S"]
+    "color": "rgb(167, 245, 63)",
+    "position": [[2,5]]
   },
   {
     "label": "You are in a forest",
     "src": "26 i 65.gif",
-    "color": {"r": 167, "g": 245, "b": 63},
-    "position": [[2,6],[6,5]],
-    "directions": ["E","W"]
+    "color": "rgb(167, 245, 63)",
+    "position": [[2,6],[6,5]]
   },
   {
     "label": "You are in a deep forest",
     "src": "27 i 67.gif",
-    "color": {"r": 140, "g": 253, "b": 99},
-    "position": [[2,7],[6,7]],
-    "directions": ["N","W"]
+    "color": "rgb(140, 253, 99)",
+    "position": [[2,7],[6,7]]
   },
   {
     "label": "You are by the Vistula River",
     "src": "31.gif",
-    "color": {"r": 122, "g": 232, "b": 252},
-    "position": [[3,1]],
-    "directions": ["N","E"]
+    "color": "rgb(122, 232, 252)",
+    "position": [[3,1]]
   },
   {
     "label": "You are by the Vistula River",
     "src": "32.gif",
-    "color": {"r": 140, "g": 214, "b": 255},
-    "position": [[3,2]],
-    "directions": ["N","W"]
+    "color": "rgb(140, 214, 255)",
+    "position": [[3,2]]
   },
   {
     "label": "You are on a bridge over river",
     "src": "33.gif",
-    "color": {"r": 108, "g": 181, "b": 242},
-    "position": [[3,3]],
-    "directions": ["N","S"]
+    "color": "rgb(108, 181, 242)",
+    "position": [[3,3]]
   },
   {
     "label": "You are by the old tavern",
     "src": "34.gif",
-    "color": {"r": 255, "g": 189, "b": 117},
-    "position": [[3,4]],
-    "directions": ["E"]
+    "color": "rgb(255, 189, 117)",
+    "position": [[3,4]]
   },
   {
     "label": "You are at the town's end",
     "src": "35.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[3,5]],
-    "directions": ["N","W","S"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[3,5]]
   },
   {
     "label": "You are in a butcher's shop",
     "src": "36.gif",
-    "color": {"r": 255, "g": 188, "b": 102},
-    "position": [[3,6]],
-    "directions": ["S"]
+    "color": "rgb(255, 188, 102)",
+    "position": [[3,6]]
   },
   {
     "label": "You are in a cooper's house",
     "src": "37.gif",
-    "color": {"r": 255, "g": 188, "b": 102},
-    "position": [[3,7]],
-    "directions": ["S"]
+    "color": "rgb(255, 188, 102)",
+    "position": [[3,7]]
   },
   {
     "label": "You are in the Wawel Castle",
     "src": "41.gif",
-    "color": {"r": 255, "g": 176, "b": 141},
-    "position": [[4,1]],
-    "directions": ["E"]
+    "color": "rgb(255, 176, 141)",
+    "position": [[4,1]]
   },
   {
     "label": "You are inside a dragon's cave",
     "src": "42.gif",
-    "color": {"r": 198, "g": 205, "b": 193},
-    "position": [[4,2]],
-    "directions": ["E","W"]
+    "color": "rgb(198, 205, 193)",
+    "position": [[4,2]]
   },
   {
     "label": "A perfect place to set a trap",
     "src": "43.gif",
-    "color": {"r": 255, "g": 176, "b": 141},
-    "position": [[4,3]],
-    "directions": ["N","W"]
+    "color": "rgb(255, 176, 141)",
+    "position": [[4,3]]
   },
   {
     "label": "You are by the water mill",
     "src": "44.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[4,4]],
-    "directions": ["E"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[4,4]]
   },
   {
     "label": "You are at a main crossroad",
     "src": "45.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[4,5]],
-    "directions": ["N","S","E","W"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[4,5]]
   },
   {
     "label": "You are on a town street",
     "src": "46.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[4,6]],
-    "directions": ["N","E","W"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[4,6]]
   },
   {
     "label": "You are in a front yard of your house",
     "src": "47.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[4,7]],
-    "directions": ["N","W","S"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[4,7]]
   },
   {
     "label": "You are by a swift stream",
     "src": "54.gif",
-    "color": {"r": 108, "g": 181, "b": 242},
-    "position": [[5,4]],
-    "directions": ["E"]
+    "color": "rgb(108, 181, 242)",
+    "position": [[5,4]]
   },
   {
     "label": "You are on a street leading to the forest",
     "src": "55.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[5,5]],
-    "directions": ["N","W","S"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[5,5]]
   },
   {
     "label": "You are in a woodcutter's backyard",
     "src": "56.gif",
-    "color": {"r": 255, "g": 190, "b": 99},
-    "position": [[5,6]],
-    "directions": ["S"]
+    "color": "rgb(255, 190, 99)",
+    "position": [[5,6]]
   },
   {
     "label": "You are in a shoemaker's house",
     "src": "57.gif",
-    "color": {"r": 254, "g": 194, "b": 97},
-    "position": [[5,7]],
-    "directions": ["N"]
+    "color": "rgb(254, 194, 97)",
+    "position": [[5,7]]
   },
   {
     "label": "You are in a bleak funeral house",
     "src": "64.gif",
-    "color": {"r": 254, "g": 194, "b": 97},
-    "position": [[6,4]],
-    "directions": ["E"]
+    "color": "rgb(254, 194, 97)",
+    "position": [[6,4]]
   },
   {
     "label": "You are on a path leading to the wood",
     "src": "26 i 65.gif",
-    "color": {"r": 167, "g": 245, "b": 63},
+    "color": "rgb(167, 245, 63)",
     "position": [[2,6],[6,5]]
   },
   {
     "label": "You are at the edge of a forest",
     "src": "66.gif",
-    "color": {"r": 167, "g": 245, "b": 63},
-    "position": [[6,6]],
-    "directions": ["N","E","W"]
+    "color": "rgb(167, 245, 63)",
+    "position": [[6,6]]
   },
   {
     "label": "You are in a deep forest",
     "src": "27 i 67.gif",
-    "color": {"r": 140, "g": 253, "b": 99},
+    "color": "rgb(140, 253, 99)",
     "position": [[2,7],[6,7]]
   }
 ]

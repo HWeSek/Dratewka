@@ -1,5 +1,7 @@
 import mapLocation from './static/js/location.js';
 import Item from './static/js/item.js';
+import Player from './static/js/player.js';
+import { Ui } from './static/js/Ui.js';
 
 ////////////////////JSONY
 let response = await fetch('./static/data/locations.json');
@@ -48,8 +50,8 @@ for (let data of directions_json) {
     locations.forEach(row => {
         row.forEach(location => {
             try {
-                if (location.position.x == position.x) {
-                    console.log('dupa');
+                if (location.position.x == position.x && location.position.y == position.y) {
+                    location.directions = data.directions;
                 }
             } catch (error) {
 
@@ -58,5 +60,8 @@ for (let data of directions_json) {
     })
 }
 
+
+const player = new Player(locations);
+Ui.uiSetUP(player);
 
 
