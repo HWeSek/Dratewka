@@ -15,6 +15,13 @@ export default class Player {
             this.position.x += x
             this.position.y += y
             this.locations[this.position.y][this.position.x].setLocation()
+            let hand = document.getElementById('hand')
+            hand.innerText = 'You are carrying ';
+            if (this.hand == undefined) {
+                hand.innerText = 'You are carrying nothing...';
+            } else {
+                hand.innerText += this.hand;
+            }
         }
     }
 }

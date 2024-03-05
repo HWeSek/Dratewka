@@ -37,12 +37,15 @@ for (let data of locations_json) {
     });
 }
 
-for (let data of item_positions) {
-    items.forEach(item => {
-        if (item.id == data.id) {
-            locations[data.position[0]][data.position[1]].items.push(data);
-        }
-    })
+for (let position_1 of item_positions) {
+    let item = items_json.find((itemt) => itemt.id == position_1.item_id);
+    let location
+    try {
+        location = locations.flat().find((locationt) => locationt?.position?.x == position_1.position[0] && locationt?.position?.y == position_1.position[1])
+    } catch (error) {
+
+    }
+    location.items.push(item);
 }
 
 for (let data of directions_json) {
