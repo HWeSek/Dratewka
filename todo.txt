@@ -1,0 +1,3 @@
+VOCAB GOSSIP {once: true} delete unnecesary...
+
+Items pick up -> player method take(item)-> check if hand == undefined put item inside else alert()
