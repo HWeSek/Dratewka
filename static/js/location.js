@@ -8,6 +8,13 @@ export default class mapLocation {
         this.directions = directions
     }
 
+    removeItem(item) {
+        if (this.items.includes(item)) {
+            this.items = this.items.splice(this.items.indexOf(item), 1)
+            this.setLocation()
+        }
+    }
+
     setLocation() {
         document.getElementById('location-text').innerText = '';
         document.getElementById('location-label').innerText = this.label;

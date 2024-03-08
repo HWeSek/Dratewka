@@ -4,5 +4,6 @@ export default class Item {
         this.flag = flag;
         this.label = label;
         this.name = name;
+        this.position;
     }
 }

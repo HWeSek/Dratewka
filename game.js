@@ -38,14 +38,15 @@ for (let data of locations_json) {
 }
 
 for (let position_1 of item_positions) {
-    let item = items_json.find((itemt) => itemt.id == position_1.item_id);
+    let item = items.find((itemt) => itemt.id == position_1.item_id);
+    item.position = { x: position_1.position[0], y: position_1.position[1] }
     let location
     try {
         location = locations.flat().find((locationt) => locationt?.position?.x == position_1.position[0] && locationt?.position?.y == position_1.position[1])
+        location.items.push(item);
     } catch (error) {
 
     }
-    location.items.push(item);
 }
 
 for (let data of directions_json) {
@@ -63,8 +64,7 @@ for (let data of directions_json) {
     })
 }
 
-
 const player = new Player(locations);
-Ui.uiSetUP(player);
+Ui.uiSetUP(player, items);
 
 

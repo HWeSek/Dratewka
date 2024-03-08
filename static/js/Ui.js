@@ -19,74 +19,94 @@ let vocab = ["NORTH or N, SOUTH or S",
 export const Ui = {
     start_location: { x: 7, y: 4 },
     waitForInput() {
-        document.getElementById('player-input').style.display = 'block';
-        document.getElementById('info').style.display = 'block';
+        document.getElementById('player-input').style.display = 'inline-block';
+        document.getElementById('info').style.display = 'inline-block';
         document.getElementById('location-text').style.display = 'block';
-        document.getElementById('location-alert').style.display = "none";
-        window.removeEventListener('keypress', this.waitForInput)
+        document.getElementById('location-alert').innerText = "";
+        document.getElementById('player-input').focus()
     },
-    uiSetUP(player) {
+    infoBar(message) {
+        document.getElementById('info').innerText = message;
+        document.getElementById('player-input').style.display = 'none';
+        setTimeout(() => {
+            document.getElementById('info').innerHTML = "WHAT NOW?&nbsp;";
+            document.getElementById('player-input').style.display = 'inline-block';
+            document.getElementById('player-input').focus()
+        }, 1000)
+    }
+    ,
+    uiSetUP(player, items) {
         window.addEventListener('keydown', (e) => {
             if (e.key == 'Enter') {
-                switch (document.getElementById('player-input').value.toUpperCase()) {
-                    case "GOSSIP":
-                    case "G":
-                        document.getElementById('location-text').style.display = 'none';
-                        document.getElementById('location-alert').style.display = "block";
-                        for (const line of gossip) {
-                            document.getElementById('location-alert').innerText += (line + "\n")
-                        }
-                        document.getElementById('player-input').style.display = 'none';
-                        document.getElementById('info').style.display = 'none';
-                        setTimeout(() => { window.addEventListener('keypress', this.waitForInput) }, 1000)
-                        break;
+                let input = String(document.getElementById('player-input').value.toUpperCase())
+                if (new RegExp('^(T|TAKE|U|USE|D|DROP) .*').test(input)) {
+                    let values = input.match('^(TAKE|T|USE|U|DROP|D) (.*)');
+                    let item = items.find((one_item) => one_item.name.toUpperCase() == values[2])
+                    switch (values[1]) {
+                        case 'T':
+                        case 'TAKE':
+                            player.take(item)
+                            break;
+                        case 'U':
+                        case 'USE':
 
-                    case "VOCABULARY":
-                    case "V":
-                        document.getElementById('location-text').style.display = 'none';
-                        document.getElementById('location-alert').style.display = "block";
-                        for (const line of vocab) {
-                            document.getElementById('location-alert').innerText += (line + "\n")
-                        }
-                        document.getElementById('player-input').style.display = 'none';
-                        document.getElementById('info').style.display = 'none';
-                        setTimeout(() => { window.addEventListener('keypress', this.waitForInput) }, 1000)
+                            break;
+                        case 'D':
+                        case 'DROP':
 
-                        break;
-                    case "NORTH":
-                    case "N":
-                        player.move(0, -1, "N")
-                        break;
-                    case "SOUTH":
-                    case "S":
-                        player.move(0, 1, "S")
-                        break;
-                    case "EAST":
-                    case "E":
-                        player.move(1, 0, "E")
-                        break;
-                    case "WEST":
-                    case "W":
-                        player.move(-1, 0, "W")
-                        break;
+                            break;
 
-                    case "TAKE":
-                    case "T":
+                        default:
+                            this.infoBar('Try another word or V for vocabulary...')
+                            break;
+                    }
+                } else {
+                    switch (input) {
+                        case "GOSSIP":
+                        case "G":
+                            document.getElementById('location-text').style.display = 'none';
+                            for (const line of gossip) {
+                                document.getElementById('location-alert').innerText += (line + "\n")
+                            }
+                            document.getElementById('player-input').style.display = 'none';
+                            document.getElementById('info').style.display = 'none';
+                            setTimeout(() => { window.addEventListener('keypress', this.waitForInput, { once: true }) }, 1000)
+                            break;
 
-                        break;
-                    case "DROP":
-                    case "D":
+                        case "VOCABULARY":
+                        case "V":
+                            document.getElementById('location-text').style.display = 'none';
+                            document.getElementById('location-alert').style.display = "block";
+                            for (const line of vocab) {
+                                document.getElementById('location-alert').innerText += (line + "\n")
+                            }
+                            document.getElementById('player-input').style.display = 'none';
+                            document.getElementById('info').style.display = 'none';
+                            setTimeout(() => { window.addEventListener('keypress', this.waitForInput), { once: true } }, 1000)
 
-                        break;
-                    case "USE":
-                    case "U":
-
-                        break;
-
-                    default:
-
-                        break;
+                            break;
+                        case "NORTH":
+                        case "N":
+                            player.move(0, -1, "N")
+                            break;
+                        case "SOUTH":
+                        case "S":
+                            player.move(0, 1, "S")
+                            break;
+                        case "EAST":
+                        case "E":
+                            player.move(1, 0, "E")
+                            break;
+                        case "WEST":
+                        case "W":
+                            player.move(-1, 0, "W")
+                            break;
+                        default:
+                            this.infoBar('Try another word or V for vocabulary...')
+                            break;
+                    }
                 }
+
                 document.getElementById('player-input').value = '';
             }
 

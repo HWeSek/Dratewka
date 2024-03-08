@@ -9,6 +9,7 @@
     box-sizing: border-box;
     font-size: medium;
     text-transform: uppercase;
+    line-height: 8px;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
 }
 
 #location-text {
-    height: 160px;
+    height: 100px;
     
 }
 
