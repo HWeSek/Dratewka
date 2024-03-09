@@ -67,6 +67,12 @@ Ui.uiSetUP(player, items);
 
 export const game_data = {
     sheep_parts: 0,
-    dragon_dead: false
+    dragon_dead: false,
+    dirLabels: {
+        E: "EAST",
+        N: "NORTH",
+        W: "WEST",
+        S: "SOUTH"
+    }
 }
 

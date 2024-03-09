@@ -1,3 +1,5 @@
+import { game_data } from "../../game.js";
+
 export default class mapLocation {
     constructor(position, color, imgSrc, label, directions) {
         this.position = position
@@ -51,7 +53,7 @@ export default class mapLocation {
         directions_text.innerText = 'You can go '
         this.directions.sort()
         this.directions.forEach(direction => {
-            directions_text.innerText += (direction + ", ")
+            directions_text.innerText += (game_data.dirLabels[direction] + ", ")
             document.getElementById(direction).style.display = 'none';
         });
 

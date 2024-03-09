@@ -36,6 +36,7 @@ export default class Player {
             }else{
                 this.position.x += x
                 this.position.y += y
+                Ui.infoBar("You are going" + game_data.dirLabels[dir])
                 this.locations[this.position.y][this.position.x].setLocation()
                 this.hand_display()
             }
