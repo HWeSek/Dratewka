@@ -25,6 +25,19 @@ for (let i = 0; i < 9; i++) {
     }
     locations.push(row)
 }
+
+/////////ZMIENNE GRY
+export const game_data = {
+    sheep_parts: 0,
+    dragon_dead: false,
+    dirLabels: {
+        E: "EAST",
+        N: "NORTH",
+        W: "WEST",
+        S: "SOUTH"
+    }
+}
+
 /////////////ITEMY
 let items = [];
 for (let data of items_json) {
@@ -65,14 +78,4 @@ for (let data of directions_json) {
 const player = new Player(locations);
 Ui.uiSetUP(player, items);
 
-export const game_data = {
-    sheep_parts: 0,
-    dragon_dead: false,
-    dirLabels: {
-        E: "EAST",
-        N: "NORTH",
-        W: "WEST",
-        S: "SOUTH"
-    }
-}
 
