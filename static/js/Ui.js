@@ -49,11 +49,11 @@ export const Ui = {
                             break;
                         case 'U':
                         case 'USE':
-
+                            
                             break;
                         case 'D':
                         case 'DROP':
-
+                            player.drop(item)
                             break;
 
                         default:

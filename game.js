@@ -33,16 +33,16 @@ for (let data of items_json) {
 
 for (let data of locations_json) {
     data.position.forEach(position => {
-        locations[position[0]][position[1]] = new mapLocation({ x: position[0], y: position[1] }, data.color, data.src, data.label);
+        locations[position[0]][position[1]] = new mapLocation({ x: position[1], y: position[0] }, data.color, data.src, data.label);
     });
 }
 
 for (let position_1 of item_positions) {
     let item = items.find((itemt) => itemt.id == position_1.item_id);
-    item.position = { x: position_1.position[0], y: position_1.position[1] }
+    item.position = { x: position_1.position[1], y: position_1.position[0] }
     let location
     try {
-        location = locations.flat().find((locationt) => locationt?.position?.x == position_1.position[0] && locationt?.position?.y == position_1.position[1])
+        location = locations.flat().find((locationt) => locationt?.position?.x == position_1.position[1] && locationt?.position?.y == position_1.position[0])
         location.items.push(item);
     } catch (error) {
 
@@ -50,17 +50,15 @@ for (let position_1 of item_positions) {
 }
 
 for (let data of directions_json) {
-    let position = { x: parseInt(data.id[0]), y: parseInt(data.id[1]) }
-    locations.forEach(row => {
-        row.forEach(location => {
-            try {
-                if (location.position.x == position.x && location.position.y == position.y) {
-                    location.directions = data.directions;
-                }
-            } catch (error) {
-
+    let position = { x: parseInt(data.id[1]), y: parseInt(data.id[0]) }
+    locations.flat().forEach(location => {
+        try {
+            if (location.position.x == position.x && location.position.y == position.y) {
+                location.directions = data.directions;
             }
-        })
+        } catch (error) {
+
+        }
     })
 }
 

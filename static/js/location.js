@@ -11,8 +11,25 @@ export default class mapLocation {
     removeItem(item) {
         if (this.items.includes(item)) {
             this.items.splice(this.items.indexOf(item), 1)
-
+            this.setLocation()
         }
+    }
+
+    dropValidate(item){
+        if(item.flag === 1){
+            let couter=0;
+            for(let element of this.items){
+                if(element.flag === 1){
+                    couter++;
+                }
+            }
+            if(couter < 3){
+                return true;
+            }else{
+                return false;
+            }
+        }
+ 
     }
 
     setLocation() {
@@ -21,17 +38,21 @@ export default class mapLocation {
         document.getElementById('image').style.backgroundColor = this.color;
         document.getElementById('image').src = 'static/img/' + this.imgSrc;
 
+        document.getElementById('E').style.display = "block";
+        document.getElementById('N').style.display = "block";
+        document.getElementById('W').style.display = "block";
+        document.getElementById('S').style.display = "block";
         ////TEXT
         const directions_text = document.createElement('p');
         const items_text = document.createElement('p');
         items_text.setAttribute('id', 'items')
         const hand_text = document.createElement('p');
         hand_text.setAttribute('id', 'hand');
-
         directions_text.innerText = 'You can go '
         this.directions.sort()
         this.directions.forEach(direction => {
             directions_text.innerText += (direction + ", ")
+            document.getElementById(direction).style.display = 'none';
         });
 
 

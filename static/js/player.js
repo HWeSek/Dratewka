@@ -27,14 +27,50 @@ export default class Player {
             this.position.y += y
             this.locations[this.position.y][this.position.x].setLocation()
             this.hand_display()
+            console.log(this.position);
         }
     }
 
     take(item) {
-        if (this.hand == undefined) {
-            if (item.position.x == this.position.x && item.position.y == this.position.y) {
-                this.hand = item;
-                this.hand_display()
+        if(item != undefined){
+            if(item.flag === 1){
+                if(item.position != 'player'){
+                    if (item.position.x == this.position.x && item.position.y == this.position.y) {
+                        if (this.hand == undefined) {
+                            this.hand = item;
+                            this.hand_display()
+                            let target_loc;
+                            for (let loc of this.locations.flat()) {
+                                try {
+                                    if (loc.position.x === this.position.x && loc.position.y === this.position.y) {
+                                        target_loc = loc;
+                                    }
+                                } catch (error) {
+            
+                                }
+                            }
+                            console.log(target_loc);
+                            target_loc.removeItem(item)
+                            item.position = 'player';
+                            this.hand_display()
+                        } else {
+                            Ui.infoBar('Your hands are full!!!')
+                        }
+                    }
+                }else{
+                    Ui.infoBar('You are holding that item already!')
+                }
+            }else{
+                Ui.infoBar("You can't take that item!")
+            }
+        }else{
+            Ui.infoBar('There is nothing like that here!')
+        }
+    }
+
+    drop(item){
+        if(item != undefined){
+            if(this.hand == item){
                 let target_loc;
                 for (let loc of this.locations.flat()) {
                     try {
@@ -42,14 +78,24 @@ export default class Player {
                             target_loc = loc;
                         }
                     } catch (error) {
-
                     }
                 }
-                target_loc.removeItem(item)
-            }
-        }
-        else {
-            Ui.infoBar('Your hands are full!!!')
+                console.log(target_loc);
+                if(target_loc.dropValidate(item)){
+                    item.position = this.position;
+                    this.hand = undefined;
+                    target_loc.items.push(item);
+                    target_loc.setLocation()
+                    this.hand_display()
+                }else{
+                    Ui.infoBar("You can't drop this item here!")
+                }
+            }else{
+                Ui.infoBar("You don't have that item!")
+            }  
+        }else{
+            Ui.infoBar("You don't have that item!")
         }
     }
+        
 }
