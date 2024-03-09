@@ -1,0 +1,23 @@
+[
+    {"id": 10, "value": 56, "next_id": 11, "description": "You opened a tool shed and took an axe"},
+    {"id": 11, "value": 67, "next_id": 12, "description": "You cut sticks for sheeplegs"},
+    {"id": 12, "value": 43, "next_id": 13, "extra_id": "L", "description": "You prepared legs for your fake sheep", "milestone": "ok"},
+    {"id": 14, "value": 34, "next_id": 15, "description": "The tavern owner paid you money"},
+    {"id": 15, "value": 37, "next_id": 16, "description": "The cooper sold you a new barrel"},
+    {"id": 16, "value": 43, "next_id": 17, "extra_id": "L", "description": "You made a nice sheeptrunk","milestone": "ok"},
+    {"id": 18, "value": 36, "next_id": 19, "description": "The butcher gave you wool"},
+    {"id": 19, "value": 43, "next_id": 20, "extra_id": "L", "description": "You prepared skin for your fake sheep","milestone": "ok"},
+    {"id": 21, "value": 57, "next_id": 22, "description": "You used your tools to make a rag"},
+    {"id": 22, "value": 43, "next_id": 23, "extra_id": "L", "description": "You made a fake sheephead","milestone": "ok"},
+    {"id": 24, "value": 11, "next_id": 25, "description": "You are digging... (timeout) and digging... (timeout) That's enough sulphur for you"},
+    {"id": 25, "value": 43, "next_id": 26, "extra_id": "L", "description": "You prepared a solid poison","milestone": "ok"},
+    {"id": 27, "value": 21, "next_id": 28, "description": "You got a bucket full of tar"},
+    {"id": 28, "value": 43, "next_id": 29, "extra_id": "L", "description": "You prepared a liquid poison","milestone": "ok"},
+    {"id": 37, "value": 43, "next_id": 30, "extra_id": "L", "description": "Your fake sheep is full of poison and ready to be eaten by the dragon"},
+    {"id": 30, "value": 43, "extra_id": "L", "description": "The dragon noticed your gift... (timeout) The dragon ate your sheep and died! - podmiana grafiki na lokacji (martwy smok)!"},
+    {"id": 33, "value": 43, "extra_id": "zabity smok", "next_id": 34, "description": "You cut a piece of dragon's skin"},
+    {"id": 34, "value": 57, "next_id": 35, "description": "You used your tools to make shoes"},
+    {"id": 35, "value": 41, "next_id": 36, "description": "The King is impressed by your shoes"},
+    {"id": 36, "end_game": true, "description": "koniec gry - załadowanie odpowiedniej grafiki"}
+  ]
+  

@@ -28,7 +28,7 @@ export default class mapLocation {
             }else{
                 return false;
             }
-        }
+        }else{return true;}
  
     }
 
@@ -62,7 +62,7 @@ export default class mapLocation {
             items_text.innerText = 'You can see nothing...';
         } else {
             this.items.forEach(item => {
-                items_text.innerText += (item.name + ", ")
+                items_text.innerText += (item.label + ", ")
             })
         }
         

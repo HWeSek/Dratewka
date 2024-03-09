@@ -1,11 +1,11 @@
 import { Ui } from "./Ui.js";
+import { game_data } from "../../game.js";
 
 export default class Player {
-    constructor(locations, items) {
+    constructor(locations) {
         this.position = { x: 7, y: 4 };
         this.hand = undefined;
         this.locations = locations;
-        this.items = items;
         this.tp(7, 4)
     }
 
@@ -23,11 +23,24 @@ export default class Player {
     }
     move(x, y, dir) {
         if (this.locations[this.position.y][this.position.x].directions.includes(dir)) {
-            this.position.x += x
-            this.position.y += y
-            this.locations[this.position.y][this.position.x].setLocation()
-            this.hand_display()
-            console.log(this.position);
+            if(this.position.x == 2 && this.position.y == 4 && game_data.dragon_dead == false){
+                document.getElementById('info').innerText = "You can't go that way...";
+                setTimeout(() => {                  
+                    document.getElementById('info').innerText += "\nThe dragon sleeps in the cave";
+                    setTimeout(() => {
+                        document.getElementById('info').innerHTML = "WHAT NOW?&nbsp;";
+                        document.getElementById('player-input').style.display = 'inline-block';
+                        document.getElementById('player-input').focus()
+                }, 1000)
+            }, 1000)
+            }else{
+                this.position.x += x
+                this.position.y += y
+                this.locations[this.position.y][this.position.x].setLocation()
+                this.hand_display()
+            }
+        }else{
+            Ui.infoBar("You can't go that way...");
         }
     }
 
@@ -89,6 +102,273 @@ export default class Player {
                     this.hand_display()
                 }else{
                     Ui.infoBar("You can't drop this item here!")
+                }
+            }else{
+                Ui.infoBar("You don't have that item!")
+            }  
+        }else{
+            Ui.infoBar("You don't have that item!")
+        }
+    }
+
+    use(item, items){
+        if(item != undefined){
+            if(this.hand == item || item.id == 'sheep'){
+                switch(item.id){
+                    case 10:
+                        if(this.position.y == 5 && this.position.x == 6){
+                            const new_item = items.find((el) => el.id == 11)
+                            item.position = undefined;
+                            this.hand = new_item;
+                            Ui.infoBar('You opened a tool shed and took an axe');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 11:
+                        if(this.position.y == 6 && this.position.x == 7){
+                            const new_item = items.find((el) => el.id == 12)
+                            item.position = undefined;
+                            this.hand = new_item;
+                            Ui.infoBar('You cut sticks for sheeplegs');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 12:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 13)
+                            item.position = undefined;
+                            this.hand = new_item;
+                            this.drop(new_item)  
+                            game_data.sheep_parts++;                        
+                            Ui.infoBar('You prepared legs for your fake sheep');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 14:
+                        if(this.position.y == 3 && this.position.x == 4){
+                            const new_item = items.find((el) => el.id == 15)
+                            item.position = undefined;
+                            this.hand = new_item;                        
+                            Ui.infoBar('The tavern owner paid you money');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 15:
+                        if(this.position.y == 3 && this.position.x == 7){
+                            const new_item = items.find((el) => el.id == 16)
+                            item.position = undefined;
+                            this.hand = new_item;                        
+                            Ui.infoBar('The cooper sold you a new barrel');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 16:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 17)
+                            item.position = undefined;
+                            this.hand = new_item;  
+                            this.drop(new_item)  
+                            game_data.sheep_parts++;                      
+                            Ui.infoBar('You made a nice sheeptrunk');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 18:
+                        if(this.position.y == 3 && this.position.x == 6){
+                            const new_item = items.find((el) => el.id == 19)
+                            item.position = undefined;
+                            this.hand = new_item;                        
+                            Ui.infoBar('The butcher gave you wool');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 19:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 20)
+                            item.position = undefined;
+                            this.hand = new_item;  
+                            this.drop(new_item)  
+                            game_data.sheep_parts++;                      
+                            Ui.infoBar('You prepared skin for your fake sheep');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 21:
+                        if(this.position.y == 5 && this.position.x == 7){
+                            const new_item = items.find((el) => el.id == 22)
+                            item.position = undefined;
+                            this.hand = new_item;                        
+                            Ui.infoBar('You used your tools to make a rag');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 22:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 23)
+                            item.position = undefined;
+                            this.hand = new_item;  
+                            this.drop(new_item)  
+                            game_data.sheep_parts++;                      
+                            Ui.infoBar('You made a fake sheephead');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 24:
+                        if(this.position.y == 1 && this.position.x == 1){
+                            const new_item = items.find((el) => el.id == 25)
+                            item.position = undefined;
+                            this.hand = new_item;                      
+                            document.getElementById('info').innerText = "You are digging...";
+                            document.getElementById('player-input').style.display = 'none';
+                            setTimeout(() => {
+                                document.getElementById('info').innerText += "\nand digging...";
+                                setTimeout(() => {
+                                    document.getElementById('info').innerText += "\nThat's enough sulphur for you";
+                                    setTimeout(() => {
+                                        document.getElementById('info').innerHTML = "WHAT NOW?&nbsp;";
+                                        document.getElementById('player-input').style.display = 'inline-block';
+                                        document.getElementById('player-input').focus()
+                                    }, 1000)
+                                }, 1000)
+                            }, 1000)
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 25:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 26)
+                            item.position = undefined;
+                            this.hand = new_item;  
+                            this.drop(new_item)  
+                            game_data.sheep_parts++;                      
+                            Ui.infoBar('You prepared a solid poison');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 27:
+                        if(this.position.y == 2 && this.position.x == 1){
+                            const new_item = items.find((el) => el.id == 28)
+                            item.position = undefined;
+                            this.hand = new_item;                        
+                            Ui.infoBar('You got a bucket full of tar');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 28:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 29)
+                            item.position = undefined;
+                            this.hand = new_item;  
+                            this.drop(new_item)  
+                            game_data.sheep_parts++;                      
+                            Ui.infoBar('You prepared a liquid poison');
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 'sheep':
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 37)
+                            item.position = undefined;
+                            this.hand = new_item;                      
+                            Ui.infoBar('Your fake sheep is full of poison and ready to be eaten by the dragon');
+                            this.hand_display()
+                        }
+                        break;
+                    case 37:
+                        if(this.position.y == 4 && this.position.x == 3){
+                            const new_item = items.find((el) => el.id == 30)
+                            item.position = undefined;
+                            this.hand = new_item;  
+                            this.drop(new_item)    
+                            document.getElementById('info').innerText = "The dragon noticed your gift...";                    
+                            setTimeout(() => {                  
+                                    document.getElementById('info').innerText += "\nThe dragon ate your sheep and died!";
+                                    let target_loc;
+                                      for (let loc of this.locations.flat()) {
+                                          try {
+                                              if (loc.position.x === 4 && loc.position.y === 3) {
+                                                  target_loc = loc;
+                                              }
+                                          } catch (error) {
+                                          }
+                                      }
+                                    target_loc.imgSrc = '../img/DS68.bmp';
+                                    game_data.dragon_dead = true;
+                                    setTimeout(() => {
+                                        document.getElementById('info').innerHTML = "WHAT NOW?&nbsp;";
+                                        document.getElementById('player-input').style.display = 'inline-block';
+                                        document.getElementById('player-input').focus()
+                                }, 1000)
+                            }, 1000)
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 33:
+                        if(this.position.y == 4 && this.position.x == 3 && game_data.dragon_dead == true){
+                            const new_item = items.find((el) => el.id == 34)
+                            item.position = undefined;
+                            this.hand = new_item;                       
+                            Ui.infoBar("You cut a piece of dragon's skin");
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 34:
+                        if(this.position.y == 5 && this.position.x == 7){
+                            const new_item = items.find((el) => el.id == 35)
+                            item.position = undefined;
+                            this.hand = new_item;                       
+                            Ui.infoBar("You used your tools to make shoes");
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 35:
+                        if(this.position.y == 4 && this.position.x == 1){
+                            const new_item = items.find((el) => el.id == 36)
+                            item.position = undefined;
+                            this.hand = new_item;                       
+                            Ui.infoBar("The King is impressed by your shoes");
+                            this.hand_display()
+                        }else{
+                            Ui.infoBar("You can't do that here!")
+                        }
+                        break;
+                    case 36:
+                        ///KONIEC GRYYY!!!!
+                    
                 }
             }else{
                 Ui.infoBar("You don't have that item!")

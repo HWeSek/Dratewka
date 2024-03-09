@@ -1,3 +1,5 @@
+import { game_data } from "../../game.js";
+
 const gossip = [
     "The  woodcutter lost  his home key...",
     "The butcher likes fruit... The cooper",
@@ -49,7 +51,7 @@ export const Ui = {
                             break;
                         case 'U':
                         case 'USE':
-                            
+                            player.use(item, items)
                             break;
                         case 'D':
                         case 'DROP':
@@ -108,7 +110,9 @@ export const Ui = {
 
                 document.getElementById('player-input').value = '';
             }
-
+            if(game_data.sheep_parts == 6){
+                player.use({id: 'sheep'}, items)
+            }
         })
     }
 }

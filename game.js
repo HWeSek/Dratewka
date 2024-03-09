@@ -65,4 +65,8 @@ for (let data of directions_json) {
 const player = new Player(locations);
 Ui.uiSetUP(player, items);
 
+export const game_data = {
+    sheep_parts: 0,
+    dragon_dead: false
+}
 
