@@ -111,6 +111,7 @@ export const Ui = {
                 document.getElementById('player-input').value = '';
             }
             if(game_data.sheep_parts == 6){
+                game_data.sheep_parts++;
                 player.use({id: 'sheep'}, items)
             }
         })

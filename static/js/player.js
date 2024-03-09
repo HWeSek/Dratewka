@@ -23,7 +23,7 @@ export default class Player {
     }
     move(x, y, dir) {
         if (this.locations[this.position.y][this.position.x].directions.includes(dir)) {
-            if(this.position.x == 2 && this.position.y == 4 && game_data.dragon_dead == false){
+            if(this.position.x == 2 && this.position.y == 4 && game_data.dragon_dead == false && dir == "W"){
                 document.getElementById('info').innerText = "You can't go that way...";
                 setTimeout(() => {                  
                     document.getElementById('info').innerText += "\nThe dragon sleeps in the cave";
@@ -297,7 +297,21 @@ export default class Player {
                         if(this.position.y == 4 && this.position.x == 3){
                             const new_item = items.find((el) => el.id == 37)
                             item.position = undefined;
-                            this.hand = new_item;                      
+                            this.hand = new_item;   
+                            let target_loc;
+                             for (let loc of this.locations.flat()) {
+                                 try {
+                                     if (loc.position.x === 4 && loc.position.y === 3) {
+                                         target_loc = loc;
+                                     }
+                                 } catch (error) {}
+                             }   
+                            target_loc.removeItem(items.find((el) => el.id == 13))                
+                            target_loc.removeItem(items.find((el) => el.id == 17))                
+                            target_loc.removeItem(items.find((el) => el.id == 20))                
+                            target_loc.removeItem(items.find((el) => el.id == 23))                
+                            target_loc.removeItem(items.find((el) => el.id == 26))                
+                            target_loc.removeItem(items.find((el) => el.id == 29))                
                             Ui.infoBar('Your fake sheep is full of poison and ready to be eaten by the dragon');
                             this.hand_display()
                         }
