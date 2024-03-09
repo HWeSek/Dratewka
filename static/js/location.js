@@ -11,6 +11,7 @@ export default class mapLocation {
     }
 
     removeItem(item) {
+        console.log(this.items.includes(item));
         if (this.items.includes(item)) {
             this.items.splice(this.items.indexOf(item), 1)
             this.setLocation()
@@ -35,6 +36,7 @@ export default class mapLocation {
     }
 
     setLocation() {
+        //console.log(this.items);
         document.getElementById('location-text').innerText = '';
         document.getElementById('location-label').innerText = this.label;
         document.getElementById('image').style.backgroundColor = this.color;

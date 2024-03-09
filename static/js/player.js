@@ -94,7 +94,7 @@ export default class Player {
                     } catch (error) {
                     }
                 }
-                console.log(target_loc);
+                //console.log(target_loc);
                 if(target_loc.dropValidate(item)){
                     item.position = this.position;
                     this.hand = undefined;
@@ -112,7 +112,7 @@ export default class Player {
         }
     }
 
-    use(item, items){
+    use(item, items){   
         if(item != undefined){
             if(this.hand == item || item.id == 'sheep'){
                 switch(item.id){
@@ -302,17 +302,19 @@ export default class Player {
                             let target_loc;
                              for (let loc of this.locations.flat()) {
                                  try {
-                                     if (loc.position.x === 4 && loc.position.y === 3) {
+                                     if (loc.position.x === 3 && loc.position.y === 4) {
                                          target_loc = loc;
                                      }
                                  } catch (error) {}
                              }   
+                            
                             target_loc.removeItem(items.find((el) => el.id == 13))                
                             target_loc.removeItem(items.find((el) => el.id == 17))                
                             target_loc.removeItem(items.find((el) => el.id == 20))                
                             target_loc.removeItem(items.find((el) => el.id == 23))                
                             target_loc.removeItem(items.find((el) => el.id == 26))                
-                            target_loc.removeItem(items.find((el) => el.id == 29))                
+                            target_loc.removeItem(items.find((el) => el.id == 29)) 
+                            target_loc.setLocation()               
                             Ui.infoBar('Your fake sheep is full of poison and ready to be eaten by the dragon');
                             this.hand_display()
                         }
@@ -329,7 +331,7 @@ export default class Player {
                                     let target_loc;
                                       for (let loc of this.locations.flat()) {
                                           try {
-                                              if (loc.position.x === 4 && loc.position.y === 3) {
+                                              if (loc.position.x === 3 && loc.position.y === 4) {
                                                   target_loc = loc;
                                               }
                                           } catch (error) {
@@ -337,6 +339,7 @@ export default class Player {
                                       }
                                     target_loc.imgSrc = '../img/DS68.bmp';
                                     game_data.dragon_dead = true;
+                                    target_loc.setLocation()
                                     setTimeout(() => {
                                         document.getElementById('info').innerHTML = "WHAT NOW?&nbsp;";
                                         document.getElementById('player-input').style.display = 'inline-block';
@@ -383,6 +386,7 @@ export default class Player {
                         break;
                     case 36:
                         ///KONIEC GRYYY!!!!
+                        document.getElementById('end_screen').style.display = 'block'
                     
                 }
             }else{

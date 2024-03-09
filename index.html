@@ -10,16 +10,26 @@
     <script type="module" src="./game.js"></script>
 </head>
 <body>
-    <p id="location-label"></p>
-    <div id="location-image"><img id="image"><img id="compass" src="./static/img/compass.png">
-    <div class="compass_cover" id="E"></div>
-    <div class="compass_cover" id="N"></div>
-    <div class="compass_cover" id="S"></div>
-    <div class="compass_cover" id="W"></div>
+    <!-- TITLE SCREEN -->
+    <audio autoplay="true" id="theme" style="display: none;" src="static/mp3/hejnal.mp3"></audio>
+    <div id="title_1"><img width="820" src="static/img/main_theme.jpg"></div>
+    <div id="title_2"><img width="820" src="static/img/intro1.jpg"></div>
+    <div id="title_3"><img width="820" src="static/img/intro2.jpg"></div>
+    <!-- END SCREEN -->
+    <div id="end_screen"><img width="820" src="static/img/main_theme.jpg"></div>
+    <!--  -->
+    <div id="game_container">
+        <p id="location-label"></p>
+        <div id="location-image"><img id="image"><img id="compass" src="./static/img/compass.png">
+        <div class="compass_cover" id="E"></div>
+        <div class="compass_cover" id="N"></div>
+        <div class="compass_cover" id="S"></div>
+        <div class="compass_cover" id="W"></div>
+        </div>
+        <p id="location-text"></p>
+        <p id="location-alert"></p>
+        <br>
+        <span id="info">WHAT NOW?&nbsp;</span><input id="player-input" onblur="this.focus()">
     </div>
-    <p id="location-text"></p>
-    <p id="location-alert"></p>
-    <br>
-    <span id="info">WHAT NOW?&nbsp;</span><input id="player-input" onblur="this.focus()" autofocus="true">
 </body>
 </html>

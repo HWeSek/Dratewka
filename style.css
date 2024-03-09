@@ -59,23 +59,33 @@ body {
 }
 
 #E{
-    top: 145px;
-    left: 720px;
+    top: 182px;
+    left: 1000px;
 }
 
 #W {
-    top: 145px;
-    left: 420px;
+    top: 182px;
+    left: 700px;
 }
 
 #N {
-    top: 97px;
-    left: 560px;
+    top: 134px;
+    left: 840px;
 }
 
 #S {
-    top: 244px;
-    left: 570px;
+    top: 282px;
+    left: 850px;
 }
 
- 
+#title_1{position: absolute; z-index: 5; left: 258px}
+#title_2{position: absolute; z-index: 4; left: 258px}
+#title_3{position: absolute; z-index: 3; left: 258px}
+#end_screen{position: absolute; z-index: 3; left: 258px; display: none;}
+
+#game_container {
+    margin-left: 250px;
+    padding: 30px;
+    background-color: rgb(15, 15, 15);
+    width: fit-content;
+}
