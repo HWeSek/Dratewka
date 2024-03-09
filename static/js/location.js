@@ -10,8 +10,8 @@ export default class mapLocation {
 
     removeItem(item) {
         if (this.items.includes(item)) {
-            this.items = this.items.splice(this.items.indexOf(item), 1)
-            this.setLocation()
+            this.items.splice(this.items.indexOf(item), 1)
+
         }
     }
 
@@ -23,6 +23,11 @@ export default class mapLocation {
 
         ////TEXT
         const directions_text = document.createElement('p');
+        const items_text = document.createElement('p');
+        items_text.setAttribute('id', 'items')
+        const hand_text = document.createElement('p');
+        hand_text.setAttribute('id', 'hand');
+
         directions_text.innerText = 'You can go '
         this.directions.sort()
         this.directions.forEach(direction => {
@@ -30,7 +35,7 @@ export default class mapLocation {
         });
 
 
-        const items_text = document.createElement('p');
+        
         items_text.innerText = 'You can see '
         if (this.items.length == 0) {
             items_text.innerText = 'You can see nothing...';
@@ -39,8 +44,7 @@ export default class mapLocation {
                 items_text.innerText += (item.name + ", ")
             })
         }
-        const hand_text = document.createElement('p');
-        hand_text.setAttribute('id', 'hand');
+        
         hand_text.innerText = "You are carrying nothing...";
         document.getElementById('location-text').appendChild(directions_text);
         document.getElementById('location-text').appendChild(items_text);

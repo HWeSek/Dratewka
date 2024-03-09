@@ -1,4 +1,4 @@
-let gossip = [
+const gossip = [
     "The  woodcutter lost  his home key...",
     "The butcher likes fruit... The cooper",
     "is greedy... Dratewka plans to make a",
@@ -8,7 +8,7 @@ let gossip = [
     "Press any key"
 ]
 
-let vocab = ["NORTH or N, SOUTH or S",
+const vocab = ["NORTH or N, SOUTH or S",
     "WEST or W, EAST or E",
     "TAKE (object) or T (object)",
     "DROP (object) or D (object)",
@@ -75,15 +75,14 @@ export const Ui = {
 
                         case "VOCABULARY":
                         case "V":
+                            console.log('LOG');
                             document.getElementById('location-text').style.display = 'none';
-                            document.getElementById('location-alert').style.display = "block";
                             for (const line of vocab) {
                                 document.getElementById('location-alert').innerText += (line + "\n")
                             }
                             document.getElementById('player-input').style.display = 'none';
-                            document.getElementById('info').style.display = 'none';
-                            setTimeout(() => { window.addEventListener('keypress', this.waitForInput), { once: true } }, 1000)
-
+                           document.getElementById('info').style.display = 'none';
+                           setTimeout(() => { window.addEventListener('keypress', this.waitForInput, { once: true }) }, 1000)
                             break;
                         case "NORTH":
                         case "N":
