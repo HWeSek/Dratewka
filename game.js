@@ -76,19 +76,20 @@ for (let data of directions_json) {
 }
 
 const player = new Player(locations);
-window.addEventListener('keypress', ()=>{
+window.addEventListener('keypress', () => {
     document.getElementById('title_1').style.display = 'none';
+    document.getElementById('theme').volume = 0.2
     document.getElementById('theme').play()
-    window.addEventListener('keypress', ()=>{
+    window.addEventListener('keypress', () => {
         document.getElementById('title_2').style.display = 'none';
-        window.addEventListener('keypress', ()=>{
+        window.addEventListener('keypress', () => {
             document.getElementById('title_3').style.display = 'none';
             Ui.uiSetUP(player, items);
             document.getElementById('theme').pause()
             document.getElementById('player-input').focus()
-        }, {once: true})
-    }, {once: true})
-}, {once: true})
+        }, { once: true })
+    }, { once: true })
+}, { once: true })
 
 
 
